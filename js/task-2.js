@@ -26,10 +26,13 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
+const items = [];
 
 images.forEach((image) => {
   const element = document.createElement('img');
   element.src = image.url;
   element.alt = image.alt;
-  gallery.append(element);
+  items.push(element);
 });
+
+gallery.append(...items);
